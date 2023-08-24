@@ -20,5 +20,14 @@ namespace HMS.Models
         public int Gender { get; set; }
 
         public List<TreatmentRecordModal> AppointmentsInfo { get; set; }
+
+        public List<GovtSchemeModal>GovtSchemeModals { get; set; }
+
+        public PatientLoginModal()
+        {
+            List<GovtSchemeModal> GovtSchemeModals = new List<GovtSchemeModal>();
+            List<TreatmentRecordModal> AppointmentsInfo = new List<TreatmentRecordModal>();
+
+        }
     }
 }

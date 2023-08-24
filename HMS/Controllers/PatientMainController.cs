@@ -22,8 +22,9 @@ namespace HMS.Controllers
 				string result = jsonDataString.Substring(1, jsonDataString.Length - 2);
 				string cleanJson = result.Replace("\\", "");
 				var appointmentsList = PatientService.GetAllAppointments(GetPatientId());
+				var allGovtSchemes = PatientService.GetAllGovtSchemes();
 				var modals = JsonConvert.DeserializeObject<PatientLoginModal>(cleanJson);
-				var modal = new PatientLoginModal() { Name = modals.Name, Surname = modals.Surname,AppointmentsInfo = appointmentsList};
+				var modal = new PatientLoginModal() { Name = modals.Name, Surname = modals.Surname,AppointmentsInfo = appointmentsList,GovtSchemeModals = allGovtSchemes};
 			return View("patientMain",modal);
 			}
 			return Redirect("/");

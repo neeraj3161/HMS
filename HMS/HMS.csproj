@@ -496,6 +496,7 @@
     </Compile>
     <Compile Include="Models\DoctorLoginInfoWrapper.cs" />
     <Compile Include="Models\DoctorsLoginModal.cs" />
+    <Compile Include="Models\GovtSchemeModal.cs" />
     <Compile Include="Models\HospitalInfoModal.cs" />
     <Compile Include="Models\LoginModal.cs" />
     <Compile Include="Models\PatientLoginInfoModalWrapper.cs" />
@@ -555,6 +556,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\PatientMain\patientMain.cshtml" />
     <Content Include="Views\PatientMain\HospitalInfo.cshtml" />
+    <Content Include="Views\PatientMain\DoctorsInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -235,13 +235,30 @@ $('.searchBtn').click(function (e)
 $('.recordsBtn').click(function (e) {
 	console.log("records");
 	hideAllExcept("records");
+	const table = $('#govtBenefitsInfoTable').DataTable({
+		buttons: [
+			'copy', 'excel', 'pdf'
+		],
+		select: true,
+		//set page length from 10 to 5
+		pageLength: 5,
+		lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]
+	});
 
 })
 
 
-$('.appointmentsBtn').click(function (e) {
-	hideAllExcept("appointments");
-
+$('').click(function (e) {
+	
+	const table = $('#govtBenefitsInfoTable').DataTable({
+		buttons: [
+			'copy', 'excel', 'pdf'
+		],
+		select: true,
+		//set page length from 10 to 5
+		pageLength: 5,
+		lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]
+	});
 })
 
 $('.profileBtn').click(function (e) {
