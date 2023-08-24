@@ -1,0 +1,241 @@
+﻿@{
+	ViewBag.Title = "Home Page";
+}
+
+@model  HMS.Models.LoginModal
+
+
+<div class="carousel-div">
+	@*@{Html.RenderPartial("~/Views/Home/_mainCarousel.cshtml");}*@
+	<h2 class="main-head">Why Us?</h2>
+	<p class="main-para"> <mark>We are committed to providing you with exceptional healthcare services and convenience at your fingertips. Our Hospital Management System Portal is designed to empower patients with easy access to medical appointments, government benefits, and comprehensive medical records. </mark> </p>
+	<button type="button" name="myButton"><span class="main-btn-span"></span> Take a Tour</button>
+</div>
+
+<div class="services-sec ">
+	<h2 class="serviceName">Features</h2>
+	<div class="line"></div>
+	<div class="services">
+		<div class="info-box">
+			<i class="fa-solid fa-user-group custom-icon"></i>
+			<h3 class="firstService">User-Friendly Interface</h3>
+			<p class="infopara">Our portal boasts an intuitive design that makes navigation and interaction a breeze.</p>
+		</div>
+		<div class="info-box">
+			<i class="fa-solid fa-bell custom-icon"></i>
+			<h3>Appointment Reminders</h3>
+			<p class="infopara">Stay on top of your healthcare schedule with timely appointment reminders sent directly to your registered email or mobile number.</p>
+		</div>
+		<div class="info-box">
+			<i class="fa-solid fa-phone-volume custom-icon"></i>
+			<h3>24/7 Accessibility</h3>
+			<p class="infopara">Access your information and schedule appointments whenever you need, from the comfort of your home.</p>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="services-sec ">
+	<h2 class="serviceName">Services</h2>
+	<div class="line"></div>
+	<div class="services">
+		<div class="info-box">
+			<i class="fa-solid fa-calendar-check custom-icon"></i>
+			<h3 class="firstService">Medical Appointments</h3>
+			<p class="infopara">Book medical appointments effortlessly through our user-friendly portal. With just a few clicks, you can schedule appointments with your preferred healthcare professionals at your convenience. Our system allows you to choose the date, time, and specialist of your choice, ensuring that your healthcare needs are met efficiently.</p>
+		</div>
+		<div class="info-box">
+			<i class="fa-solid fa-handshake custom-icon"></i>
+			<h3>Avail Government Benefits</h3>
+			<p class="infopara">We understand the importance of making healthcare affordable for everyone. Our portal provides information about available government benefits and schemes that you might be eligible for. We guide you through the process of availing these benefits, making quality healthcare accessible to all.</p>
+		</div>
+		<div class="info-box">
+			<i class="fa-solid fa-shield-halved custom-icon"></i>
+			<h3>Secure Access to Medical Records</h3>
+			<p class="infopara">Your health records are crucial for providing accurate and effective care. Our portal gives you centralized access to all your medical records, including diagnosis, treatment history, prescriptions, and test results. This comprehensive view empowers you to actively participate in your healthcare decisions and ensures seamless communication with your healthcare providers.</p>
+		</div>
+	</div>
+</div>
+@*login modal*@
+
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="gridSystemModalLabel">Patients Login</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-xs-12">
+						<input class="form-control" type="text" placeholder="Enter your email" id="email" />
+						<span class="text-danger" id="emailError" style="display: none;">Invalid email format</span>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 10px;">
+					<div class="col-xs-12">
+						<input class="form-control" type="password" placeholder="Enter your password" id="password" />
+						<span class="text-danger" id="passwordError" style="display: none;">Password must be at least 6 characters</span>
+						<span class="text-primary">Reset Password?</span>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="loginButton">Login</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="hospitalLoginModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="gridSystemModalLabel">Doctors Login</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-xs-12">
+						<input class="form-control" type="text" placeholder="Enter phone number" id="email" />
+						<span class="text-danger" id="emailError" style="display: none;">Invalid email format</span>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 10px;">
+					<div class="col-xs-12">
+						<input class="form-control" type="password" placeholder="Enter your password" id="password" />
+						<span class="text-danger" id="passwordError" style="display: none;">Password must be at least 6 characters</span>
+						<span class="text-primary">Reset Password?</span>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="loginButton">Login</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="gridSystemModalLabel">Registration</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="firstName">First Name:</label>
+							<input class="form-control" type="text" id="firstName" />
+							<span class="text-danger" id="firstNameError" style="display: none;">First Name is required</span>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="lastName">Last Name:</label>
+							<input class="form-control" type="text" id="lastName" />
+							<span class="text-danger" id="lastNameError" style="display: none;">Last Name is required</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="phone">Phone:</label>
+							<input class="form-control" type="tel" id="phone" />
+							<span class="text-danger" id="phoneError" style="display: none;">Phone is required</span>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="email">Email:</label>
+							<input class="form-control" type="email" id="email" />
+							<span class="text-danger" id="emailError" style="display: none;">Invalid email format</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="age">Age:</label>
+							<input class="form-control" type="number" id="age" />
+							<span class="text-danger" id="ageError" style="display: none;">Age is required</span>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label>Gender:</label>
+							<div>
+								<label class="radio-inline">
+									<input type="radio" name="gender" value="male" /> Male
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="gender" value="female" /> Female
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="gender" value="other" /> Other
+								</label>
+							</div>
+							<span class="text-danger" id="genderError" style="display: none;">Gender is required</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label for="address">Address:</label>
+							<textarea class="form-control" rows="3" id="address"></textarea>
+							<span class="text-danger" id="addressError" style="display: none;">Address is required</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="pincode">Pincode:</label>
+							<input class="form-control" type="text" id="pincode" />
+							<span class="text-danger" id="pincodeError" style="display: none;">Pincode is required</span>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="state">State:</label>
+							<select class="form-control" id="state">
+								<option value="">Select a state</option>
+								<option value="Andhra Pradesh">Andhra Pradesh</option>
+								<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+								<!-- Add other states here -->
+							</select>
+							<span class="text-danger" id="stateError" style="display: none;">State is required</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="signupButton">Sign Up</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+<div class="modal fade register" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			Two
+		</div>
+	</div>
+</div>
+
+@Scripts.Render("~/Scripts/Home/home.js");

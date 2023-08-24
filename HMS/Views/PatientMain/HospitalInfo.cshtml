@@ -1,0 +1,109 @@
+﻿
+@{
+	ViewBag.Title = "HospitalInfo";
+	Layout = "";
+}
+
+@model HMS.Models.HospitalInfoModal
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+<link rel="stylesheet" href="~/Content/partialMain.css">
+
+
+
+<body style="background-color:#f8f8f8">
+	<div class="container-fluid" style="display:flex;justify-content:center;align-items:center;flex-direction:column">
+		<h2>Hospital-Info</h2>
+		<h1>Welcome to @Model.Name</h1>
+		<p>Estd in year <code>@Model.Established</code> with over <code>@Model.AssociatedDoctorsInfo.Count()</code> experienced doctors working with us.</p>
+		<p id="patId">PatientID#<code style="color:crimson" id="patIdNum">@Model.PatientId</code></p>
+		<p id="hospitalId">HospitalId#<code style="color:crimson" id="hptId">@Model.HospitalId</code></p>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Book Appointment</h4>
+					</div>
+					<div class="modal-body">
+						<code>Appointment date is subjective to doctors availability.</code>
+						<form>
+							<div class="form-group">
+								<label for="patientId">Patient ID</label>
+								<input type="text" class="form-control " id="patientId" readonly>
+							</div>
+							<div class="form-group">
+								<label for="doctorId">Doctor ID</label>
+								<input type="text" class="form-control" id="doctorId" readonly>
+							</div>
+							<div class="form-group">
+								<label for="departmentId">Department ID</label>
+								<input type="text" class="form-control" id="departmentId" readonly>
+							</div>
+							<div class="form-group">
+								<label for="hospitalIdInp">Hospital ID</label>
+								<input type="text" class="form-control" id="hospitalIdInp" readonly>
+							</div>
+							<div class="form-group">
+								<label for="hospitalId">Enter your age</label>
+								<input type="number" class="form-control" id="age" required>
+							</div>
+							<div class="form-group">
+								<label for="symptoms">Mention Symptoms In Detail</label>
+								<textarea type="text" class="form-control" id="symptoms" rows="3" required></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" id="submitAppointmentBtn" class="btn btn-primary">Submit Appointment</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<table id="hospitalInfoPage">
+			<thead>
+				<tr>
+					<th>Doctor ID</th>
+					<th>Doctor's Name</th>
+					<th>Speciality</th>
+					<th>Hospital Name</th>
+					<th>Contact number</th>
+					<th>Experience</th>
+					<th>Patient Treated</th>
+				</tr>
+
+			</thead>
+			<tbody>
+
+				@foreach (var docData in Model.AssociatedDoctorsInfo)
+				{
+					<tr>
+						<td data-toggle="modal" data-target="#myModal">@docData.DoctorId</td>
+						<td data-toggle="modal" data-target="#myModal">@docData.Name @docData.Surname</td>
+						<td data-toggle="modal" data-target="#myModal">@docData.Speciality</td>
+						<td data-toggle="modal" data-target="#myModal">@docData.Name</td>
+						<td data-toggle="modal" data-target="#myModal">@docData.PhoneNumber</td>
+						<td data-toggle="modal" data-target="#myModal">@docData.Experience</td>
+						<td data-toggle="modal" data-target="#myModal">@docData.PatientsTreated</td>
+					</tr>
+
+				}
+			</tbody>
+		</table>
+	</div>
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	@Scripts.Render("~/bundles/bootstrap")
+	@Scripts.Render("~/Scripts/HospitalInfo.js")
+	<script src="https://kit.fontawesome.com/1aa2271ee2.js" crossorigin="anonymous"></script>
+</body>

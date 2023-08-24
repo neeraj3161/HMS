@@ -1,0 +1,110 @@
+﻿var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Default"];
+            string query = $"SELECT * FROM hms.hospital_info;";
+            NpgsqlConnection connection = new NpgsqlConnection(connectionString.ToString());
+            try
+            {
+                connection.Open();
+
+                using (NpgsqlTransaction tran = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        using (NpgsqlCommand command = new NpgsqlCommand(query.ToString(), connection, tran))
+                        {
+                            using (NpgsqlDataReader dr = command.ExecuteReader())
+                            {
+                                if (dr.HasRows)
+                                {
+                                    while (dr.Read())
+                                    {
+
+                                    }
+                                }
+                            }
+                        }
+
+                        tran.Commit();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        try
+                        {
+                            tran.Rollback();
+                        }
+                        catch (Exception)
+                        { }
+                    }
+
+                }
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+
+             System.Configuration.ConfigurationManager.AppSettings[tenantId.ToString()];
+
+
+
+             Post request
+
+
+             <!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="postDataBtn">Send POST Request</button>
+    <div id="result"></div>
+
+    <script>
+    $(document).ready(function() {
+        $("#postDataBtn").click(function() {
+            // Data to be sent in the POST request
+            var requestData = {
+                username: "john_doe",
+                password: "secret123"
+            };
+
+            // Perform POST request
+            $.ajax({
+                url: "https://example.com/api/login", // URL to the API endpoint
+                type: "POST",                         // HTTP method
+                contentType: "application/json",      // Content type
+                data: JSON.stringify(requestData),    // Data to be sent
+                success: function(response) {
+                    $("#result").html("Response: " + JSON.stringify(response));
+                },
+                error: function(xhr, status, error) {
+                    console.log("Error:", error);
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
+
+
+$.ajax({
+                url: "/Home/PatientLogin", // URL to the API endpoint
+                type: "POST",                         // HTTP method
+                contentType: "application/json",      // Content type
+                data: JSON.stringify({ email: $('#email').val(), password: $('#password').val() }),    // Data to be sent
+                success: function (response) {
+                    if (response.success) {
+                        window.location.href = "/patientMain";
+                    }
+                    else
+                    {
+                        window.location.href = "/";
+                        toastr.error("Please check the login credentials and try again", "Error");
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log("Error:", error);
+                }
+            });

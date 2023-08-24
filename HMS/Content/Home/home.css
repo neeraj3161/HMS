@@ -1,0 +1,182 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.main_div {
+}
+
+
+li {
+    list-style: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color:transparent;
+    margin-bottom: 0;
+    position:fixed;
+    top:0;
+    width:100%
+}
+
+a {
+    padding: 0 15px 0 15px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-family: Poppins, sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+p {
+    color: white;
+    font-size: 1em;
+    line-height: 80px;
+    font-family: Poppins, sans-serif;
+    font-weight:500;
+}
+
+a:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+.carousel-div {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    height:100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../Images/mainBgHMS.jpg");
+    background-position:center;
+    background-size:cover;
+    column-gap:2px
+}
+/*Removing default margin added by bootstrap*/
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family:poppins,sans-serif;
+}
+
+p
+{
+    line-height:22px
+}
+
+.navbar-toggle 
+{
+    background-color:#f8f8f8;
+}
+
+.icon-bar 
+{
+    background-color:#000;
+}
+
+.main-para {
+    text-align: center;
+    padding: 0 10% 0 10%;
+    font-size: 1em;
+    line-height: 30px;
+    word-spacing: 3px;
+}
+
+
+.main-head {
+    font-size: 5em;
+    letter-spacing:7px;
+}
+.main-para, .main-head {
+    margin-bottom: 3%;
+}
+button {
+    font-size: 19px;
+    font-weight: 200;
+    border: 1px solid #f8f8f8;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.5s;
+    color: #f8f8f8
+}
+
+    button:hover {
+        background-color: #f8f8f8;
+        border:none;
+        color:#808080;
+
+    }
+
+.serviceName {
+    margin-top: 3%;
+    text-align: center;
+}
+
+.line {
+    height: 3px;
+    width: 3%;
+    margin: auto;
+    background-color: grey;
+}
+
+
+.custom-icon {
+    font-size: 3em;
+    padding-top: 15px;
+    color: #ACB1D6;
+}
+
+.info-box {
+    height: 69%;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    gap: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 4%;
+    margin-bottom: 5%;
+}
+
+.infopara {
+    padding: 0 18% 0 18%;
+    text-align: center;
+    color:#000;
+}
+
+
+@media (max-width:800px) {
+    .navbar {
+        flex-direction: column;
+        background-color: #272829;
+    }
+}

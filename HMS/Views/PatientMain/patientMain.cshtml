@@ -1,0 +1,187 @@
+﻿@model  HMS.Models.PatientLoginModal
+
+@{
+	Layout = "";
+}
+
+
+
+
+<title>Hospital Management System</title>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+<link rel="stylesheet" href="~/Content/partialMain.css">
+
+<div id="wrapper">
+
+	<!-- Sidebar -->
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li class="sidebar-brand">
+				<a href="#">
+					HMS
+				</a>
+			</li>
+
+			<li class="sidebar-brand">
+				<p style="color:#f8f8f8">Welcome @Model.Name @Model.Surname</p>
+			</li>
+			<li class="dashboardBtn">
+				<a href="#">Dashboard</a>
+			</li>
+			<li class="searchBtn">
+				<a href="#">Search Hospital</a>
+			</li>
+			<li class="recordsBtn">
+				<a href="#">Records</a>
+			</li>
+			<li class="appointmentsBtn">
+				<a href="#">Appointments</a>
+			</li>
+			<li class="profileBtn">
+				<a href="#">Profile</a>
+			</li>
+			<li class="supportBtn">
+				<a href="#">Support</a>
+			</li>
+			<li class="insuranceBtn">
+				<a href="#">Insurance details</a>
+			</li>
+			<li class="logoutBtn">
+				<a href="#">Log out</a>
+			</li>
+		</ul>
+	</div>
+	<!-- /#sidebar-wrapper -->
+	<!-- Page Content -->
+	<div id="page-content-wrapper" class="dash">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+					<h1>Dashboard</h1>
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-col">
+								<div class="well">
+									Appointments <code id="aptCounts">@Model.AppointmentsInfo.Count()</code>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-col">
+								<div class="well blue searchBtn">Search Hospital  <i class="fa fa-search"></i></div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-col">
+								<div class="well" style="border-left:2px solid green">Find Records  <i class="fa-solid fa-magnifying-glass-arrow-right"></i></div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-col">
+								<div class="well" style="border-left:2px solid green">Book Appointments  <i class="fa-solid fa-floppy-disk"></i></div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-col">
+								<div class="well" style="border-left:2px solid aqua">Find Govt Schemes  <i class="fa-solid fa-list"></i></div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-col">
+								<a class="" href="https://www.who.int/philippines/news/feature-stories/detail/20-health-tips-for-2020"><div class="well" style="border-left:2px solid pink">Health tips  <i class="fa-solid fa-heart-pulse"></i></div></a>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-col">
+								<div class="well" style="border-left:2px solid blue">Profile  <i class="fa-solid fa-user"></i></div>
+							</div>
+						</div>
+					</div>
+					<p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /#page-content-wrapper -->
+
+	<div id="page-content-wrapper" class="search">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+					<h1>Search</h1>
+					<table id="hospitalInfoTable">
+						<thead>
+							<tr>
+								<th>Hospital ID</th>
+								<th>Hospital Name</th>
+								<th>Description</th>
+								<th>Contact number</th>
+								<th>Address</th>
+								<th>State</th>
+								<th>Type</th>
+							</tr>
+						</thead>
+					</table>
+					<p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="page-content-wrapper" class="records">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+					<h1>Records</h1>
+					<p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="page-content-wrapper" class="appointments">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+					<h1>Appointments</h1>
+					<p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="page-content-wrapper" class="profile">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+					<h1>Profile</h1>
+					<p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="page-content-wrapper" class="support">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+					<h1>Support</h1>
+					<p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/Scripts/partialMain.js")
+<script src="https://kit.fontawesome.com/1aa2271ee2.js" crossorigin="anonymous"></script>
